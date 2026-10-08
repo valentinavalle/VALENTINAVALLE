@@ -6,7 +6,7 @@ Sitio estático hecho con [Astro](https://astro.build). Español rioplatense, CS
 
 | Qué                              | Dónde                                                        |
 | -------------------------------- | ------------------------------------------------------------ |
-| Mail, WhatsApp, LinkedIn, textos | `src/data/perfil.ts`                                         |
+| Mail, WhatsApp, LinkedIn, textos, servicios, marcas | `src/data/perfil.ts`                      |
 | Los casos (proyectos)            | `src/data/proyectos.ts`                                      |
 | Tu foto                          | `src/assets/perfil/` (cualquier `.jpg/.png/.webp`)           |
 | Fotos de un caso                 | `src/assets/proyectos/<slug>/`                               |
@@ -14,11 +14,17 @@ Sitio estático hecho con [Astro](https://astro.build). Español rioplatense, CS
 | Colores y tipografías            | `src/styles/global.css` (variables al inicio)                |
 | Imagen al compartir el link      | `public/og.png` (1200×630)                                   |
 
-## Fotos
+## Fotos (opcionales)
+
+El sitio está pensado para verse completo **sin fotos**:
+
+- Sin foto de perfil, en "Sobre mí" aparece una tarjeta con tu frase (`sobreMi.cita` en `perfil.ts`).
+- Sin fotos de un caso, su tarjeta lleva una portada tipográfica de color, y la página del caso no muestra portada ni galería.
+
+Si algún día querés sumar fotos:
 
 - Copiá las fotos a la carpeta del caso y listo: **la primera (por orden alfabético) es la portada y el resto es la galería**. Nombralas `01.jpg`, `02.jpg`… para controlar el orden.
-- Tu foto va en `src/assets/perfil/` (se usa la primera).
-- Mientras no haya fotos se ven placeholders ("Foto del proyecto"); se reemplazan solos.
+- Tu foto va en `src/assets/perfil/` (se usa la primera) y reemplaza la tarjeta con la frase.
 - Formatos: jpg, jpeg, png, webp, avif. Astro las optimiza y las carga en lazy.
 - Alt de las fotos: por defecto se arma con la marca y el título. Si querés uno propio, agregá `alts: ['Descripción foto 1', 'Descripción foto 2']` al caso en `proyectos.ts`.
 - Al compartir un caso en redes se usa su portada; si no tiene foto, `og.png`.

@@ -9,15 +9,28 @@ interface Props {
 }
 const { proyecto, numero } = Astro.props;
 const portada = fotosDeProyecto(proyecto.slug)[0];
+// Sin foto, la tarjeta lleva una portada tipográfica; el color rota según el orden.
+const tonos = ['violeta', 'tinta', 'lima', 'rosa'];
+const tono = tonos[(Number(numero) - 1) % tonos.length];
 ---
 
 <article class="card">
-  <div class="card__foto">
-    {/* alt vacío a propósito: el enlace ya se nombra con marca y título */}
-    <Foto src={portada?.src} alt="" leyenda="Foto del proyecto" ratio="4 / 3" />
-    <span class="numero card__numero" aria-hidden="true">{numero}</span>
-    {proyecto.sello && <span class="card__sello">{proyecto.sello}</span>}
-  </div>
+  {
+    portada ? (
+      <div class="card__foto">
+        {/* alt vacío a propósito: el enlace ya se nombra con marca y título */}
+        <Foto src={portada.src} alt="" ratio="4 / 3" />
+        <span class="numero card__numero" aria-hidden="true">{numero}</span>
+        {proyecto.sello && <span class="card__sello">{proyecto.sello}</span>}
+      </div>
+    ) : (
+      <div class:list={['card__portada', `card__portada--${tono}`]} aria-hidden="true">
+        <span class="card__portada-numero">{numero}</span>
+        <span class="card__portada-etiqueta">{proyecto.etiquetas[0]}</span>
+        {proyecto.sello && <span class="card__sello">{proyecto.sello}</span>}
+      </div>
+    )
+  }
   <div class="card__cuerpo">
     <p class="card__marca">{proyecto.marca}</p>
     <h3 class="card__titulo">
@@ -57,6 +70,68 @@ const portada = fotosDeProyecto(proyecto.slug)[0];
   }
   .card__foto :global(.foto) {
     border-radius: calc(var(--radio-m) - 8px);
+  }
+  /* Portada tipográfica (cuando el caso no tiene fotos) */
+  .card__portada {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem 1.4rem 1.4rem;
+    border-radius: calc(var(--radio-m) - 8px);
+  }
+  .card__portada::after {
+    content: '';
+    position: absolute;
+    right: -18%;
+    top: -30%;
+    width: 62%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--acento);
+  }
+  .card__portada--violeta {
+    background: var(--violeta);
+    color: var(--blanco);
+    --acento: var(--lima);
+  }
+  .card__portada--tinta {
+    background: var(--tinta);
+    color: var(--lima);
+    --acento: var(--violeta);
+  }
+  .card__portada--lima {
+    background: var(--lima);
+    color: var(--tinta);
+    --acento: var(--rosa);
+  }
+  .card__portada--rosa {
+    background: var(--rosa);
+    color: var(--tinta);
+    --acento: var(--violeta);
+  }
+  .card__portada-numero {
+    position: relative;
+    z-index: 1;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(2.75rem, 7vw, 3.75rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .card__portada-etiqueta {
+    position: relative;
+    z-index: 1;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    line-height: 1.1;
+  }
+  .card__portada .card__sello {
+    z-index: 2;
+    background: var(--blanco);
   }
   .card__numero {
     position: absolute;

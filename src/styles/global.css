@@ -5,10 +5,10 @@
 :root {
   /* Paleta */
   --violeta: #6b3df5;
-  --lima: #d4f54a;
-  --rosa: #ffb3d9;
-  --tinta: #1c1a27;
-  --lavanda: #f6f4ff;
+  --lima: #c8f53b;
+  --rosa: #ff5ca8;
+  --tinta: #1a1033;
+  --lavanda: #f6f3ff;
   --blanco: #ffffff;
   /* Texto secundario sobre blanco/lavanda (cumple AA) */
   --tinta-suave: #524f66;

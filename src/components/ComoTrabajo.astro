@@ -9,6 +9,20 @@ const { comoTrabajo: c } = perfil;
   <div class="contenedor">
     <h2 id="como-trabajo-titulo" class="titulo-seccion reveal">{c.titulo}</h2>
 
+    <ol class="pasos">
+      {
+        c.pasos.map((paso, i) => (
+          <li class="paso reveal" style={`--retraso: ${i * 0.06}s`}>
+            <span class:list={['numero', i === c.pasos.length - 1 && 'paso__numero--final']} aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="paso__titulo">{paso.titulo}</h3>
+            <p class="paso__texto">{paso.texto}</p>
+          </li>
+        ))
+      }
+    </ol>
+
     <ul class="modos">
       {
         c.items.map((m, i) => (
@@ -28,6 +42,41 @@ const { comoTrabajo: c } = perfil;
 </section>
 
 <style>
+  .pasos {
+    display: grid;
+    gap: 1.75rem;
+    margin-bottom: clamp(2.5rem, 6vw, 3.75rem);
+  }
+  .paso .numero {
+    background: var(--violeta);
+    color: var(--blanco);
+    margin-bottom: 1rem;
+  }
+  .paso .paso__numero--final {
+    background: var(--rosa);
+    color: var(--tinta);
+  }
+  .paso__titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .paso__texto {
+    color: var(--tinta-suave);
+  }
+  @media (min-width: 640px) {
+    .pasos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1000px) {
+    .pasos {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
   .modos {
     display: grid;
     gap: 1.25rem;

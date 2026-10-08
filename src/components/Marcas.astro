@@ -1,0 +1,54 @@
+---
+import { perfil } from '../data/perfil';
+
+const { marcas } = perfil;
+const estilos = ['lima', 'borde', 'violeta', 'borde', 'rosa', 'borde', 'borde'];
+---
+
+<section id="marcas" class="seccion tema-tinta" aria-labelledby="marcas-titulo">
+  <div class="contenedor">
+    <h2 id="marcas-titulo" class="titulo-seccion reveal">{marcas.titulo}</h2>
+    <p class="bajada marcas__bajada reveal">{marcas.bajada}</p>
+    <ul class="marcas reveal">
+      {marcas.items.map((m, i) => <li class:list={['marca', `marca--${estilos[i % estilos.length]}`]}>{m}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .marcas__bajada {
+    margin-top: calc(-1 * clamp(0.75rem, 2vw, 1.75rem));
+    margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
+  }
+  .marcas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .marca {
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--pildora);
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+    line-height: 1.2;
+  }
+  .marca--lima {
+    background: var(--lima);
+    color: var(--tinta);
+    transform: rotate(-2deg);
+  }
+  .marca--rosa {
+    background: var(--rosa);
+    color: var(--tinta);
+    transform: rotate(2deg);
+  }
+  .marca--violeta {
+    background: var(--violeta);
+    color: var(--blanco);
+  }
+  .marca--borde {
+    border: 2px solid rgb(255 255 255 / 0.35);
+    color: var(--blanco);
+  }
+</style>

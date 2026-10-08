@@ -56,18 +56,22 @@ const puntos = Array.isArray(p.hice) ? p.hice : null;
       </div>
     </header>
 
-    <div class="caso__portada contenedor">
-      <Foto
-        src={portada?.src}
-        alt={altDe(0)}
-        leyenda="Foto del proyecto"
-        ratio="16 / 9"
-        sizes="(min-width: 1180px) 1116px, 100vw"
-        widths={[640, 960, 1280, 1600]}
-        eager
-        class="caso__portada-foto"
-      />
-    </div>
+    {
+      portada && (
+        <div class="caso__portada contenedor">
+          <Foto
+            src={portada?.src}
+            alt={altDe(0)}
+            leyenda="Foto del proyecto"
+            ratio="16 / 9"
+            sizes="(min-width: 1180px) 1116px, 100vw"
+            widths={[640, 960, 1280, 1600]}
+            eager
+            class="caso__portada-foto"
+          />
+        </div>
+      )
+    }
 
     <div class="seccion tema-blanco caso__cuerpo">
       <div class="contenedor">
@@ -144,32 +148,24 @@ const puntos = Array.isArray(p.hice) ? p.hice : null;
     </div>
 
     {
-      (galeria.length > 0 || fotos.length === 0) && (
+      galeria.length > 0 && (
         <section class="seccion tema-lavanda galeria" aria-labelledby="t-galeria">
           <div class="contenedor">
             <h2 id="t-galeria" class="titulo-seccion">Galería</h2>
             <ul class="galeria__lista">
-              {
-                fotos.length === 0
-                  ? [0, 1].map(() => (
-                      <li>
-                        <Foto leyenda="Foto del proyecto" ratio="4 / 3" />
-                      </li>
-                    ))
-                  : galeria.map((f, i) => (
-                      <li>
-                        <Image
-                          src={f.src}
-                          alt={altDe(i + 1)}
-                          widths={[480, 800, 1200]}
-                          sizes="(min-width: 760px) 560px, 100vw"
-                          loading="lazy"
-                          decoding="async"
-                          class="galeria__img"
-                        />
-                      </li>
-                    ))
-              }
+              {galeria.map((f, i) => (
+                <li>
+                  <Image
+                    src={f.src}
+                    alt={altDe(i + 1)}
+                    widths={[480, 800, 1200]}
+                    sizes="(min-width: 760px) 560px, 100vw"
+                    loading="lazy"
+                    decoding="async"
+                    class="galeria__img"
+                  />
+                </li>
+              ))}
             </ul>
           </div>
         </section>

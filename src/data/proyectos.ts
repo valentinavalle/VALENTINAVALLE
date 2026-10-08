@@ -64,18 +64,18 @@ export const proyectos: Proyecto[] = [
   },
   {
     slug: 'portfolio-eventos-motos',
-    marca: 'Suzuki, TVS, Motomel, Kove, MALAGUTI, Morbidelli',
+    marca: '11 marcas · Grupo La Emilia',
     titulo: 'Única responsable de eventos para todo un portfolio',
     descripcion:
-      'Responsable única de los eventos de seis marcas de motos en Grupo La Emilia: calendario, presupuesto, proveedores, logística y reporting, con hasta nueve eventos en paralelo.',
+      'Responsable única de los eventos de 11 marcas en Grupo La Emilia: calendario, presupuesto, proveedores, logística, viajes y reporting, con hasta nueve eventos en paralelo.',
     etiquetas: ['Eventos', 'Gestión de proyectos'],
     hice: [
-      'Planificación del calendario anual, presupuesto y control de desvíos.',
-      'Selección de proveedores, logística, merch, montaje, cierre y reporting de cada evento.',
-      'Coordinación con marketing, comercial, concesionarios y agencias.',
+      'Planificación del calendario anual, presupuesto, control de desvíos y gestión en SAP.',
+      'Búsqueda y negociación con proveedores, logística, viajes, merch, montaje, cierre y reporting de cada evento.',
+      'Coordinación con marketing, comercial, concesionarios, agencias y diseño.',
     ],
     cifras: [
-      { valor: '6', etiqueta: 'marcas' },
+      { valor: '11', etiqueta: 'marcas' },
       { valor: '9', etiqueta: 'eventos en paralelo' },
       { valor: '1', etiqueta: 'responsable' },
     ],
@@ -114,6 +114,15 @@ export const proyectos: Proyecto[] = [
     desafio: 'Generar un lanzamiento distinto y atraer público nuevo con otra marca.',
     hice: 'Propuse la colaboración con la chocolatería, acordé las condiciones y coordiné el lanzamiento de punta a punta.',
     destacado: 'SOLD OUT',
+  },
+  {
+    slug: 'brut-ipa-rose',
+    marca: 'Cervecería Rabieta',
+    titulo: 'Brut IPA Rosé, por la prevención del cáncer de mama',
+    descripcion:
+      'Una campaña de octubre por la prevención del cáncer de mama: envíos especiales junto a otras marcas e invitaciones al bar para degustar una cerveza especial.',
+    etiquetas: ['Campaña', 'Cobranding'],
+    hice: 'Una campaña de octubre con envíos especiales armados junto a otras marcas en alianza con Rabieta, e invitaciones al bar para degustar una cerveza especial.',
   },
   {
     slug: 'influencers-ugc',

@@ -14,18 +14,27 @@ const foto = fotoDePerfil();
         <h2 id="sobre-mi-titulo" class="titulo-seccion reveal">{sobreMi.titulo}</h2>
         <p class="sobre__parrafo reveal" style="--retraso: 0.08s">{sobreMi.texto}</p>
       </div>
-      <div class="sobre__foto reveal" style="--retraso: 0.12s">
-        <span class="sobre__forma" aria-hidden="true"></span>
-        <Foto
-          src={foto}
-          alt={`Retrato de ${perfil.nombre}`}
-          leyenda="Foto de perfil"
-          ratio="4 / 5"
-          sizes="(min-width: 900px) 400px, 80vw"
-          widths={[360, 560, 800]}
-          class="sobre__img"
-        />
-      </div>
+      {
+        foto ? (
+          <div class="sobre__foto reveal" style="--retraso: 0.12s">
+            <span class="sobre__forma" aria-hidden="true" />
+            <Foto
+              src={foto}
+              alt={`Retrato de ${perfil.nombre}`}
+              leyenda="Foto de perfil"
+              ratio="4 / 5"
+              sizes="(min-width: 900px) 400px, 80vw"
+              widths={[360, 560, 800]}
+              class="sobre__img"
+            />
+          </div>
+        ) : (
+          <figure class="sobre__cita reveal" style="--retraso: 0.12s">
+            <blockquote>{sobreMi.cita}</blockquote>
+            <figcaption>{perfil.nombre}</figcaption>
+          </figure>
+        )
+      }
     </div>
 
     <ul class="cifras reveal" aria-label="Algunas cifras">
@@ -70,6 +79,41 @@ const foto = fotoDePerfil();
     border-radius: var(--radio-l);
   }
 
+  .sobre__cita {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 420px);
+    padding: clamp(2rem, 5vw, 2.75rem);
+    border-radius: var(--radio-l);
+    background: var(--tinta);
+    color: var(--blanco);
+    transform: rotate(1.5deg);
+  }
+  .sobre__cita::after {
+    content: '';
+    position: absolute;
+    right: -1.25rem;
+    bottom: -1.25rem;
+    width: 4.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--rosa);
+  }
+  .sobre__cita blockquote {
+    margin: 0;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+    line-height: 1.25;
+    color: var(--lima);
+  }
+  .sobre__cita figcaption {
+    margin-top: 1.25rem;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #d9d6e8;
+  }
+
   .cifras {
     margin-top: clamp(3rem, 7vw, 5rem);
     display: grid;
@@ -104,7 +148,7 @@ const foto = fotoDePerfil();
       gap: 4rem;
     }
     .cifras {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
     }
     .cifra {
