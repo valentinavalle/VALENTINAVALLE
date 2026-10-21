@@ -18,11 +18,38 @@ const { servicios } = perfil;
             </span>
             <h3 class="servicio__titulo">{s.titulo}</h3>
             <p class="servicio__texto">{s.texto}</p>
-            {s.prueba && <p class="servicio__prueba">{s.prueba}</p>}
+            {s.ejemplos && (
+              <div class="servicio__prueba">
+                <p class="servicio__ejemplos-titulo">Ejemplos</p>
+                <ul class="servicio__ejemplos">
+                  {s.ejemplos.map((e) => (
+                    <li>
+                      <a href={`/proyectos/${e.slug}`}>
+                        {e.texto}
+                        <Icono nombre="flecha" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </li>
         ))
       }
     </ul>
+
+    {
+      servicios.incluye && (
+        <div class="incluye reveal">
+          <p class="incluye__titulo">{servicios.incluye.titulo}</p>
+          <ul class="incluye__items">
+            {servicios.incluye.items.map((item) => (
+              <li class="incluye__item">{item}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   </div>
 </section>
 
@@ -97,14 +124,68 @@ const { servicios } = perfil;
     background: var(--lima);
   }
 
+  .servicio__ejemplos-titulo {
+    font-family: var(--fuente-titulo);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tinta);
+    margin-bottom: 0.5rem;
+  }
+  .servicio__ejemplos {
+    display: grid;
+    gap: 0.4rem;
+  }
+  .servicio__ejemplos a {
+    color: var(--violeta);
+    text-decoration: underline;
+    text-decoration-color: var(--linea);
+    text-underline-offset: 3px;
+  }
+  .servicio__ejemplos a:hover {
+    text-decoration-color: var(--violeta);
+  }
+  .servicio__ejemplos :global(svg) {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.3rem;
+    vertical-align: -0.15em;
+  }
+  .incluye {
+    margin-top: clamp(1.75rem, 4vw, 2.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+  }
+  .incluye__titulo {
+    font-family: var(--fuente-titulo);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .incluye__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .incluye__item {
+    padding: 0.45rem 0.95rem;
+    border-radius: var(--pildora);
+    background: var(--blanco);
+    border: 2px solid var(--linea);
+    font-size: 0.9375rem;
+    font-weight: 500;
+  }
+
   @media (min-width: 640px) {
     .servicios {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  @media (min-width: 1100px) {
+  @media (min-width: 960px) {
     .servicios {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
   }

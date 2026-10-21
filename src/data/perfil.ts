@@ -8,13 +8,13 @@ export const perfil = {
   nombrePila: 'Valentina',
   apellido: 'Valle',
   ubicacion: 'Buenos Aires, Argentina',
-  bajada: 'Marketing, creadores y experiencias de marca. De la idea a la ejecución.',
+  bajada: 'Lanzamientos y experiencias de marca para bebidas y gastronomía. De la idea a la acción.',
 
   // Se usan en <title>, meta description y al compartir el link (Open Graph).
   seo: {
-    titulo: 'Valentina Valle · Marketing, creadores y experiencias de marca',
+    titulo: 'Valentina Valle · Lanzamientos y experiencias de marca',
     descripcion:
-      'Soy Valentina Valle, Licenciada en Comunicación Social con más de cinco años en marketing y brand experience. Trabajo como freelance en creadores y UGC, experiencias de marca, lanzamientos, cobranding, prensa y PM de marketing. Buenos Aires.',
+      'Soy Valentina Valle, Licenciada en Comunicación Social con más de cinco años en marketing y brand experience. Lanzo productos y armo experiencias de marca para bebidas y gastronomía: campañas creativas con creadores, prensa y una acción que la gente vive. Buenos Aires.',
   },
 
   contacto: {
@@ -28,7 +28,7 @@ export const perfil = {
 
   navegacion: [
     { etiqueta: 'Sobre mí', href: '#sobre-mi' },
-    { etiqueta: 'Servicios', href: '#que-hago' },
+    { etiqueta: 'Especialidades', href: '#que-hago' },
     { etiqueta: 'Proyectos', href: '#proyectos' },
     { etiqueta: 'Trayectoria', href: '#trayectoria' },
     { etiqueta: 'VERBAL', href: '#verbal' },
@@ -41,7 +41,7 @@ export const perfil = {
   sobreMi: {
     titulo: 'Sobre mí',
     texto:
-      'Soy Licenciada en Comunicación Social (UCES) y hace más de cinco años trabajo en marketing, marca y brand experience: en Grupo Sancor Seguros, en Cervecería Rabieta con Pampa y Guinness, y a cargo de los eventos de todo Grupo La Emilia. Lo mío es tomar una idea y hacerla realidad: campañas, lanzamientos, creadores y experiencias, con presupuestos, cronogramas, proveedores y equipos en orden.',
+      'Soy Licenciada en Comunicación Social (UCES) y hace más de cinco años trabajo en marketing, marca y brand experience: en Grupo Sancor Seguros, en Cervecería Rabieta con Pampa y Guinness, y a cargo de los eventos de todo Grupo La Emilia. Hoy me especializo en lo que más disfruto: lanzar productos y armar experiencias para marcas de bebidas y gastronomía. Una idea con relato, las alianzas justas, creadores y prensa, y una acción que la gente vive, con presupuestos, cronogramas y proveedores en orden.',
     // Se muestra en lugar de la foto mientras no subas una a src/assets/perfil/.
     cita: 'Me muevo igual de cómoda en lo creativo que en lo operativo.',
     cifras: [
@@ -52,75 +52,58 @@ export const perfil = {
     ],
   },
 
+  // Especialidades: cada una con ejemplos que linkean a su caso (slug de proyectos.ts).
   servicios: {
-    titulo: 'Servicios',
-    bajada: 'Podés contratar uno puntual o combinar varios, por proyecto o con fee mensual.',
+    titulo: 'Especialidades',
+    bajada: 'Tres cosas que hago muy bien, para cervecerías, destilerías, cafés, bares y marcas nuevas de consumo. Por proyecto o con fee mensual.',
     items: [
       {
-        icono: 'creadores',
-        titulo: 'Creadores y UGC',
+        icono: 'lanzamiento',
+        titulo: 'Lanzamientos y campañas creativas',
         texto:
-          'Busco y elijo perfiles, negocio fees y condiciones, escribo briefs y guiones y reviso cada pieza hasta la entrega. Packs UGC, campañas, programas mes a mes y UGC para pauta.',
-        prueba: 'Creadores para Rabieta, Pampa y Guinness a la vez.',
+          'Un producto nuevo, una edición limitada, una colaboración entre marcas o una fecha clave. Armo el concepto y el relato, busco la marca socia, sumo creadores y prensa, y diseño la acción que lo pone en la calle.',
+        ejemplos: [
+          { texto: 'Rabieta × Kakawa (sold out)', slug: 'rabieta-x-kakawa' },
+          { texto: 'DISOLUTA, edición limitada', slug: 'disoluta' },
+          { texto: 'Lanzamiento de MALAGUTI', slug: 'malaguti-lanzamiento' },
+        ],
       },
       {
         icono: 'eventos',
-        titulo: 'Experiencias de marca',
+        titulo: 'Experiencias de marca y activaciones',
         texto:
-          'Activaciones, eventos, ferias y stands: concepto, presupuesto, proveedores, logística y viajes, montaje, coordinación en el lugar y cierre con reporte.',
-        prueba: 'Los eventos de 11 marcas en Grupo La Emilia.',
-      },
-      {
-        icono: 'lanzamiento',
-        titulo: 'Lanzamientos',
-        texto:
-          'Campañas con concepto creativo, creadores, prensa y una acción de marca a medida: PR boxes, pop-up o evento.',
-        prueba: 'El lanzamiento de MALAGUTI en Argentina.',
-      },
-      {
-        icono: 'cobranding',
-        titulo: 'Cobranding entre marcas',
-        texto:
-          'Busco la marca socia, negocio el acuerdo y armamos juntas un producto o una acción: ediciones limitadas, envíos especiales e invitaciones.',
-        prueba: 'Rabieta × Kakawa, una edición que se agotó.',
-      },
-      {
-        icono: 'diario',
-        titulo: 'Prensa y clipping',
-        texto:
-          'Kits e invitaciones de prensa para lanzamientos y eventos, y monitoreo de medios: cada nota en la que aparece tu marca, con la mención destacada.',
-        prueba: 'Relación con prensa y clippings en Grupo Sancor Seguros.',
+          'Degustaciones, pop-ups, picnics y presencia en ferias y festivales. Concepto, presupuesto, proveedores, logística, coordinación en el lugar y cierre con reporte.',
+        ejemplos: [
+          { texto: 'Primavera de Pampa y Rabieta', slug: 'primavera-pampa-rabieta' },
+          { texto: 'Shark 150 en Un Poco de Ruido', slug: 'motomel-shark-150' },
+          { texto: 'Brut IPA Rosé en el bar', slug: 'brut-ipa-rose' },
+        ],
       },
       {
         icono: 'gestion',
-        titulo: 'PM de marketing',
+        titulo: 'PM de marketing y producción',
         texto:
-          'Me sumo a tu equipo por horas: cronogramas, proveedores y negociación, presupuestos, coordinación con diseño y agencias, email marketing y reportes.',
-        prueba: 'Hasta 9 eventos en paralelo.',
-      },
-      {
-        icono: 'estrategia',
-        titulo: 'Estrategia de campañas',
-        texto:
-          'Un plan de campañas con objetivos, fechas clave y calendario de contenidos, con los briefs para que tu equipo produzca y publique a su ritmo.',
-      },
-      {
-        icono: 'camara',
-        titulo: 'Contenido a medida',
-        texto:
-          'Foto, video, diseño y edición con mi red de colegas. Yo coordino el brief, la revisión y la entrega. Se cotiza según cada pedido.',
+          'Me sumo por horas a tu marca o a tu agencia, también en marca blanca, para llevar lanzamientos y eventos de punta a punta: cronogramas, proveedores, presupuestos y equipos.',
+        ejemplos: [
+          { texto: 'Eventos de 11 marcas a la vez', slug: 'portfolio-eventos-motos' },
+          { texto: 'Creadores para 3 marcas en simultáneo', slug: 'influencers-ugc' },
+        ],
       },
     ],
+    incluye: {
+      titulo: 'Adentro de cada proyecto',
+      items: ['Creadores e influencers', 'Cobranding entre marcas', 'Prensa y PR boxes', 'Contenido con mi red de colegas'],
+    },
   },
 
   proyectos: {
     titulo: 'Proyectos',
-    bajada: 'Lanzamientos, activaciones, cobrandings y campañas con creadores. Elegí uno y te cuento cómo lo hice.',
+    bajada: 'Lanzamientos, ediciones limitadas, colaboraciones y experiencias. Elegí uno y te cuento cómo lo hice.',
   },
 
   marcas: {
     titulo: 'Marcas con las que trabajé',
-    bajada: 'Bebidas, seguros y movilidad: categorías distintas, el mismo foco en llevar cada proyecto de punta a punta.',
+    bajada: 'Bebidas, seguros y movilidad: empecé en grandes marcas y hoy llevo esa escala a cervecerías, cafés, bares y marcas nuevas.',
     items: [
       'Cervecería Rabieta',
       'Guinness',
@@ -144,6 +127,17 @@ export const perfil = {
   trayectoria: {
     titulo: 'Trayectoria',
     items: [
+      {
+        fecha: 'Oct 2026 – hoy',
+        empresa: 'Freelance',
+        rol: 'Lanzamientos y experiencias de marca',
+        actual: true,
+        puntos: [
+          'Campañas de lanzamiento y temporada para marcas de bebidas y gastronomía.',
+          'Experiencias de marca y activaciones, de la idea al cierre.',
+          'PM de marketing y producción para marcas y agencias.',
+        ],
+      },
       {
         fecha: 'Sep 2025 – Oct 2026',
         empresa: 'Grupo La Emilia',
@@ -227,11 +221,11 @@ export const perfil = {
     items: [
       {
         titulo: 'Por proyecto',
-        texto: 'Un lanzamiento, una campaña, un evento o un cobranding: lo armamos con alcance y cronograma claros, y lo llevo hasta el cierre.',
+        texto: 'Un lanzamiento, una campaña de temporada o una experiencia: lo armamos con alcance y cronograma claros, y lo llevo hasta el cierre.',
       },
       {
         titulo: 'Con fee mensual',
-        texto: 'Si necesitás a alguien a cargo todos los meses, me sumo a tu equipo y acompaño el día a día del marketing.',
+        texto: 'Me sumo a tu marca o a tu agencia por horas, también en marca blanca, y llevo los lanzamientos y eventos del calendario.',
       },
     ],
   },
@@ -246,7 +240,7 @@ export const perfil = {
 
   contactoSeccion: {
     titulo: 'Hablemos',
-    bajada: 'Contame qué estás armando y te envío una propuesta a medida para tu marca.',
+    bajada: '¿Tenés un lanzamiento, una fecha o una experiencia en mente? Contame y te envío una propuesta a medida.',
   },
 };
 

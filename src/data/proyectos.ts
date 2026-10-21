@@ -41,6 +41,49 @@ export interface Proyecto {
 
 export const proyectos: Proyecto[] = [
   {
+    slug: 'rabieta-x-kakawa',
+    marca: 'Cervecería Rabieta × Kakawa',
+    titulo: 'Una cerveza de chocolate en colaboración',
+    descripcion:
+      'Una cerveza de chocolate en colaboración con Kakawa: propuse la alianza, acordé las condiciones y coordiné el lanzamiento. Resultado: SOLD OUT.',
+    etiquetas: ['Lanzamiento', 'Colaboración'],
+    sello: 'SOLD OUT',
+    desafio: 'Generar un lanzamiento distinto y atraer público nuevo con otra marca.',
+    hice: 'Propuse la colaboración con la chocolatería, acordé las condiciones y coordiné el lanzamiento de punta a punta.',
+    destacado: 'SOLD OUT',
+  },
+  {
+    slug: 'disoluta',
+    marca: 'Cervecería Rabieta',
+    titulo: 'DISOLUTA, una edición limitada con relato',
+    descripcion:
+      'DISOLUTA, una coffee stout añejada en barricas de bourbon creada con la maestra cervecera y un poeta. Lideré el concepto, el cobranding y la comunicación.',
+    etiquetas: ['Lanzamiento', 'Cobranding'],
+    desafio: 'Lanzar un estilo único que se diferenciara del resto de la línea.',
+    hice: 'Una coffee stout añejada en barricas de bourbon, creada junto a la maestra cervecera y un poeta. Lideré el concepto, el cobranding con tostadores de café de especialidad y la comunicación.',
+    resultado: 'Una cerveza con historia propia, más allá del estilo.',
+  },
+  {
+    slug: 'primavera-pampa-rabieta',
+    marca: 'Pampa y Rabieta · Cervecería Rabieta',
+    titulo: 'Primavera: flores en el vaso',
+    descripcion:
+      'Una campaña de primavera para Pampa y Rabieta: picnic, creadores de contenido, difusión en medios y una cerveza de perfil floral.',
+    etiquetas: ['Campaña', 'Creadores', 'Lanzamiento'],
+    desafio: 'Celebrar la llegada de la primavera con acciones de marca para vivir y compartir.',
+    hice: 'Para Pampa organicé un picnic de primavera con producción de materiales, una campaña con creadores de contenido y difusión en medios. Desde Rabieta lanzamos una cerveza de perfil floral que unió las flores con el sabor.',
+    resultado: 'Campaña con presencia en redes y en medios, y una experiencia de marca propia de la temporada.',
+  },
+  {
+    slug: 'brut-ipa-rose',
+    marca: 'Cervecería Rabieta',
+    titulo: 'Brut IPA Rosé, por la prevención del cáncer de mama',
+    descripcion:
+      'Una campaña de octubre por la prevención del cáncer de mama: envíos especiales junto a otras marcas e invitaciones al bar para degustar una cerveza especial.',
+    etiquetas: ['Campaña', 'Cobranding'],
+    hice: 'Una campaña de octubre con envíos especiales armados junto a otras marcas en alianza con Rabieta, e invitaciones al bar para degustar una cerveza especial.',
+  },
+  {
     slug: 'malaguti-lanzamiento',
     marca: 'MALAGUTI · Grupo La Emilia',
     titulo: 'Lanzamiento de una marca nueva en Argentina',
@@ -80,49 +123,6 @@ export const proyectos: Proyecto[] = [
       { valor: '1', etiqueta: 'responsable' },
     ],
     eventos: ['Agrobikes', 'Expomoto Gualeguaychú', 'Supercross Suzuki', 'Rider Fest', 'Motobeat', 'Moto Travel Fest'],
-  },
-  {
-    slug: 'primavera-pampa-rabieta',
-    marca: 'Pampa y Rabieta · Cervecería Rabieta',
-    titulo: 'Primavera: flores en el vaso',
-    descripcion:
-      'Una campaña de primavera para Pampa y Rabieta: picnic, creadores de contenido, difusión en medios y una cerveza de perfil floral.',
-    etiquetas: ['Campaña', 'Creadores', 'Lanzamiento'],
-    desafio: 'Celebrar la llegada de la primavera con acciones de marca para vivir y compartir.',
-    hice: 'Para Pampa organicé un picnic de primavera con producción de materiales, una campaña con creadores de contenido y difusión en medios. Desde Rabieta lanzamos una cerveza de perfil floral que unió las flores con el sabor.',
-    resultado: 'Campaña con presencia en redes y en medios, y una experiencia de marca propia de la temporada.',
-  },
-  {
-    slug: 'disoluta',
-    marca: 'Cervecería Rabieta',
-    titulo: 'DISOLUTA, una edición limitada con relato',
-    descripcion:
-      'DISOLUTA, una coffee stout añejada en barricas de bourbon creada con la maestra cervecera y un poeta. Lideré el concepto, el cobranding y la comunicación.',
-    etiquetas: ['Lanzamiento', 'Cobranding'],
-    desafio: 'Lanzar un estilo único que se diferenciara del resto de la línea.',
-    hice: 'Una coffee stout añejada en barricas de bourbon, creada junto a la maestra cervecera y un poeta. Lideré el concepto, el cobranding con tostadores de café de especialidad y la comunicación.',
-    resultado: 'Una cerveza con historia propia, más allá del estilo.',
-  },
-  {
-    slug: 'rabieta-x-kakawa',
-    marca: 'Cervecería Rabieta × Kakawa',
-    titulo: 'Una cerveza de chocolate en colaboración',
-    descripcion:
-      'Una cerveza de chocolate en colaboración con Kakawa: propuse la alianza, acordé las condiciones y coordiné el lanzamiento. Resultado: SOLD OUT.',
-    etiquetas: ['Lanzamiento', 'Colaboración'],
-    sello: 'SOLD OUT',
-    desafio: 'Generar un lanzamiento distinto y atraer público nuevo con otra marca.',
-    hice: 'Propuse la colaboración con la chocolatería, acordé las condiciones y coordiné el lanzamiento de punta a punta.',
-    destacado: 'SOLD OUT',
-  },
-  {
-    slug: 'brut-ipa-rose',
-    marca: 'Cervecería Rabieta',
-    titulo: 'Brut IPA Rosé, por la prevención del cáncer de mama',
-    descripcion:
-      'Una campaña de octubre por la prevención del cáncer de mama: envíos especiales junto a otras marcas e invitaciones al bar para degustar una cerveza especial.',
-    etiquetas: ['Campaña', 'Cobranding'],
-    hice: 'Una campaña de octubre con envíos especiales armados junto a otras marcas en alianza con Rabieta, e invitaciones al bar para degustar una cerveza especial.',
   },
   {
     slug: 'influencers-ugc',
