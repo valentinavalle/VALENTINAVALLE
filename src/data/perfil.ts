@@ -126,13 +126,6 @@ export const perfil = {
         ],
       },
       {
-        fecha: 'May 2026 – hoy',
-        empresa: 'VERBAL Agencia',
-        rol: 'Co-fundadora',
-        actual: true,
-        puntos: ['Estrategia, posicionamiento y campañas.', 'Supervisión de producción creativa y redes.'],
-      },
-      {
         fecha: 'Jul 2023 – Sep 2025',
         empresa: 'Cervecería Rabieta',
         rol: 'Marketing & Brand Experience Senior',
