@@ -3,9 +3,12 @@ import { perfil } from '../data/perfil';
 import { proyectos, numeroDe } from '../data/proyectos';
 import ProyectoCard from './ProyectoCard.astro';
 
+// En el home se muestran los primeros 6 casos; el resto sigue teniendo su página.
+const enHome = proyectos.slice(0, 6);
+
 const { proyectos: textos } = perfil;
 // La tarjeta "¿Tenés un proyecto en mente?" completa la última fila de la grilla de 3 columnas.
-const resto = proyectos.length % 3;
+const resto = enHome.length % 3;
 const spanCta = resto === 0 ? 3 : 3 - resto;
 ---
 
@@ -16,7 +19,7 @@ const spanCta = resto === 0 ? 3 : 3 - resto;
 
     <ul class="grilla">
       {
-        proyectos.map((p, i) => (
+        enHome.map((p, i) => (
           <li class="reveal" style={`--retraso: ${(i % 3) * 0.08}s`}>
             <ProyectoCard proyecto={p} numero={numeroDe(i)} />
           </li>

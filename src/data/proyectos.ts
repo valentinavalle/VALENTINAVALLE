@@ -75,15 +75,6 @@ export const proyectos: Proyecto[] = [
     resultado: 'Campaña con presencia en redes y en medios, y una experiencia de marca propia de la temporada.',
   },
   {
-    slug: 'brut-ipa-rose',
-    marca: 'Cervecería Rabieta',
-    titulo: 'Brut IPA Rosé, por la prevención del cáncer de mama',
-    descripcion:
-      'Una campaña de octubre por la prevención del cáncer de mama: envíos especiales junto a otras marcas e invitaciones al bar para degustar una cerveza especial.',
-    etiquetas: ['Campaña', 'Cobranding'],
-    hice: 'Una campaña de octubre con envíos especiales armados junto a otras marcas en alianza con Rabieta, e invitaciones al bar para degustar una cerveza especial.',
-  },
-  {
     slug: 'malaguti-lanzamiento',
     marca: 'MALAGUTI · Grupo La Emilia',
     titulo: 'Lanzamiento de una marca nueva en Argentina',
@@ -123,6 +114,15 @@ export const proyectos: Proyecto[] = [
       { valor: '1', etiqueta: 'responsable' },
     ],
     eventos: ['Agrobikes', 'Expomoto Gualeguaychú', 'Supercross Suzuki', 'Rider Fest', 'Motobeat', 'Moto Travel Fest'],
+  },
+  {
+    slug: 'brut-ipa-rose',
+    marca: 'Cervecería Rabieta',
+    titulo: 'Brut IPA Rosé, por la prevención del cáncer de mama',
+    descripcion:
+      'Una campaña de octubre por la prevención del cáncer de mama: envíos especiales junto a otras marcas e invitaciones al bar para degustar una cerveza especial.',
+    etiquetas: ['Campaña', 'Cobranding'],
+    hice: 'Una campaña de octubre con envíos especiales armados junto a otras marcas en alianza con Rabieta, e invitaciones al bar para degustar una cerveza especial.',
   },
   {
     slug: 'influencers-ugc',

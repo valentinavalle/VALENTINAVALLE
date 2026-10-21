@@ -18,38 +18,17 @@ const { servicios } = perfil;
             </span>
             <h3 class="servicio__titulo">{s.titulo}</h3>
             <p class="servicio__texto">{s.texto}</p>
-            {s.ejemplos && (
-              <div class="servicio__prueba">
-                <p class="servicio__ejemplos-titulo">Ejemplos</p>
-                <ul class="servicio__ejemplos">
-                  {s.ejemplos.map((e) => (
-                    <li>
-                      <a href={`/proyectos/${e.slug}`}>
-                        {e.texto}
-                        <Icono nombre="flecha" />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            <a class="servicio__ejemplo" href={`/proyectos/${s.ejemplo.slug}`}>
+              <span class="servicio__ejemplo-etiqueta">Ejemplo</span>
+              <span class="servicio__ejemplo-texto">
+                {s.ejemplo.texto}
+                <Icono nombre="flecha" />
+              </span>
+            </a>
           </li>
         ))
       }
     </ul>
-
-    {
-      servicios.incluye && (
-        <div class="incluye reveal">
-          <p class="incluye__titulo">{servicios.incluye.titulo}</p>
-          <ul class="incluye__items">
-            {servicios.incluye.items.map((item) => (
-              <li class="incluye__item">{item}</li>
-            ))}
-          </ul>
-        </div>
-      )
-    }
   </div>
 </section>
 
@@ -97,24 +76,24 @@ const { servicios } = perfil;
   }
   .servicio__titulo {
     font-family: var(--fuente-titulo);
-    font-weight: 500;
-    font-size: 1.0625rem;
+    font-weight: 600;
+    font-size: 1.25rem;
     line-height: 1.3;
     margin-bottom: 0.6rem;
   }
   .servicio__texto {
     color: var(--tinta-suave);
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
-  .servicio__prueba {
+  .servicio__ejemplo {
     margin-top: auto;
-    padding-top: 1rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    line-height: 1.45;
+    padding-top: 1.25rem;
+    display: grid;
+    gap: 0.25rem;
     color: var(--violeta);
+    text-decoration: none;
   }
-  .servicio__prueba::before {
+  .servicio__ejemplo::before {
     content: '';
     display: block;
     width: 2.5rem;
@@ -123,59 +102,28 @@ const { servicios } = perfil;
     border-radius: 4px;
     background: var(--lima);
   }
-
-  .servicio__ejemplos-titulo {
-    font-family: var(--fuente-titulo);
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
+  .servicio__ejemplo-etiqueta {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--tinta);
-    margin-bottom: 0.5rem;
+    color: var(--tinta-suave);
   }
-  .servicio__ejemplos {
-    display: grid;
-    gap: 0.4rem;
-  }
-  .servicio__ejemplos a {
-    color: var(--violeta);
+  .servicio__ejemplo-texto {
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-color: var(--linea);
-    text-underline-offset: 3px;
+    text-underline-offset: 4px;
   }
-  .servicio__ejemplos a:hover {
+  .servicio__ejemplo:hover .servicio__ejemplo-texto {
     text-decoration-color: var(--violeta);
   }
-  .servicio__ejemplos :global(svg) {
+  .servicio__ejemplo :global(svg) {
     display: inline-block;
     width: 1rem;
     height: 1rem;
     margin-left: 0.3rem;
     vertical-align: -0.15em;
-  }
-  .incluye {
-    margin-top: clamp(1.75rem, 4vw, 2.5rem);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem 1rem;
-  }
-  .incluye__titulo {
-    font-family: var(--fuente-titulo);
-    font-weight: 500;
-    font-size: 1rem;
-  }
-  .incluye__items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .incluye__item {
-    padding: 0.45rem 0.95rem;
-    border-radius: var(--pildora);
-    background: var(--blanco);
-    border: 2px solid var(--linea);
-    font-size: 0.9375rem;
-    font-weight: 500;
   }
 
   @media (min-width: 640px) {

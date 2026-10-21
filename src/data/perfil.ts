@@ -28,10 +28,9 @@ export const perfil = {
 
   navegacion: [
     { etiqueta: 'Sobre mí', href: '#sobre-mi' },
-    { etiqueta: 'Especialidades', href: '#que-hago' },
+    { etiqueta: 'Qué hago', href: '#que-hago' },
     { etiqueta: 'Proyectos', href: '#proyectos' },
     { etiqueta: 'Trayectoria', href: '#trayectoria' },
-    { etiqueta: 'VERBAL', href: '#verbal' },
   ],
 
   hero: {
@@ -41,7 +40,7 @@ export const perfil = {
   sobreMi: {
     titulo: 'Sobre mí',
     texto:
-      'Soy Licenciada en Comunicación Social (UCES) y hace más de cinco años trabajo en marketing, marca y brand experience: en Grupo Sancor Seguros, en Cervecería Rabieta con Pampa y Guinness, y a cargo de los eventos de todo Grupo La Emilia. Hoy me especializo en lo que más disfruto: lanzar productos y armar experiencias para marcas de bebidas y gastronomía. Una idea con relato, las alianzas justas, creadores y prensa, y una acción que la gente vive, con presupuestos, cronogramas y proveedores en orden.',
+      'Licenciada en Comunicación Social, con más de cinco años en marketing y brand experience en Sancor Seguros, Cervecería Rabieta y Grupo La Emilia. Hoy lanzo productos y armo experiencias para marcas de bebidas y gastronomía.',
     // Se muestra en lugar de la foto mientras no subas una a src/assets/perfil/.
     cita: 'Me muevo igual de cómoda en lo creativo que en lo operativo.',
     cifras: [
@@ -52,53 +51,35 @@ export const perfil = {
     ],
   },
 
-  // Especialidades: cada una con ejemplos que linkean a su caso (slug de proyectos.ts).
+  // Especialidades: máximo 3, texto corto y un ejemplo que linkea a su caso (slug de proyectos.ts).
   servicios: {
-    titulo: 'Especialidades',
-    bajada: 'Tres cosas que hago muy bien, para cervecerías, destilerías, cafés, bares y marcas nuevas de consumo. Por proyecto o con fee mensual.',
+    titulo: 'Qué hago',
+    bajada: 'Para marcas de bebidas y gastronomía. Por proyecto o con fee mensual.',
     items: [
       {
         icono: 'lanzamiento',
-        titulo: 'Lanzamientos y campañas creativas',
-        texto:
-          'Un producto nuevo, una edición limitada, una colaboración entre marcas o una fecha clave. Armo el concepto y el relato, busco la marca socia, sumo creadores y prensa, y diseño la acción que lo pone en la calle.',
-        ejemplos: [
-          { texto: 'Rabieta × Kakawa (sold out)', slug: 'rabieta-x-kakawa' },
-          { texto: 'DISOLUTA, edición limitada', slug: 'disoluta' },
-          { texto: 'Lanzamiento de MALAGUTI', slug: 'malaguti-lanzamiento' },
-        ],
+        titulo: 'Lanzamientos',
+        texto: 'Productos nuevos, ediciones limitadas y colaboraciones entre marcas, con creadores y prensa.',
+        ejemplo: { texto: 'Rabieta × Kakawa, sold out', slug: 'rabieta-x-kakawa' },
       },
       {
         icono: 'eventos',
-        titulo: 'Experiencias de marca y activaciones',
-        texto:
-          'Degustaciones, pop-ups, picnics y presencia en ferias y festivales. Concepto, presupuesto, proveedores, logística, coordinación en el lugar y cierre con reporte.',
-        ejemplos: [
-          { texto: 'Primavera de Pampa y Rabieta', slug: 'primavera-pampa-rabieta' },
-          { texto: 'Shark 150 en Un Poco de Ruido', slug: 'motomel-shark-150' },
-          { texto: 'Brut IPA Rosé en el bar', slug: 'brut-ipa-rose' },
-        ],
+        titulo: 'Experiencias de marca',
+        texto: 'Degustaciones, pop-ups y activaciones en ferias y festivales, de la idea al cierre.',
+        ejemplo: { texto: 'Primavera de Pampa y Rabieta', slug: 'primavera-pampa-rabieta' },
       },
       {
         icono: 'gestion',
-        titulo: 'PM de marketing y producción',
-        texto:
-          'Me sumo por horas a tu marca o a tu agencia, también en marca blanca, para llevar lanzamientos y eventos de punta a punta: cronogramas, proveedores, presupuestos y equipos.',
-        ejemplos: [
-          { texto: 'Eventos de 11 marcas a la vez', slug: 'portfolio-eventos-motos' },
-          { texto: 'Creadores para 3 marcas en simultáneo', slug: 'influencers-ugc' },
-        ],
+        titulo: 'PM de marketing',
+        texto: 'Me sumo por horas a tu marca o agencia y llevo los proyectos de punta a punta.',
+        ejemplo: { texto: 'Eventos de 11 marcas a la vez', slug: 'portfolio-eventos-motos' },
       },
     ],
-    incluye: {
-      titulo: 'Adentro de cada proyecto',
-      items: ['Creadores e influencers', 'Cobranding entre marcas', 'Prensa y PR boxes', 'Contenido con mi red de colegas'],
-    },
   },
 
   proyectos: {
     titulo: 'Proyectos',
-    bajada: 'Lanzamientos, ediciones limitadas, colaboraciones y experiencias. Elegí uno y te cuento cómo lo hice.',
+    bajada: 'Elegí uno y te cuento cómo lo hice.',
   },
 
   marcas: {
@@ -132,21 +113,16 @@ export const perfil = {
         empresa: 'Freelance',
         rol: 'Lanzamientos y experiencias de marca',
         actual: true,
-        puntos: [
-          'Campañas de lanzamiento y temporada para marcas de bebidas y gastronomía.',
-          'Experiencias de marca y activaciones, de la idea al cierre.',
-          'PM de marketing y producción para marcas y agencias.',
-        ],
+        puntos: ['Lanzamientos, experiencias de marca y PM de marketing para bebidas y gastronomía.'],
       },
       {
         fecha: 'Sep 2025 – Oct 2026',
         empresa: 'Grupo La Emilia',
         rol: 'Responsable de Eventos y Brand Experience',
         puntos: [
-          'Eventos y activaciones de 11 marcas: Suzuki, TVS, Motomel, MALAGUTI, Kove, Morbidelli, Benelli, SYM, Scott, Orbea e IKA.',
-          'Presupuesto anual, control de desvíos y gestión en SAP.',
-          'Búsqueda y negociación con proveedores, logística y viajes para eventos.',
-          'Trabajo con agencias, concesionarios y diseño; email marketing a clientes y reportes de resultados.',
+          'Eventos y activaciones de 11 marcas, con hasta 9 en paralelo.',
+          'Lanzamiento de MALAGUTI en Argentina.',
+          'Presupuesto anual, proveedores, logística y reportes.',
         ],
       },
       {
@@ -162,10 +138,8 @@ export const perfil = {
         rol: 'Marketing & Brand Experience Senior',
         puntos: [
           'Marketing y brand experience de Rabieta, Pampa y Guinness.',
-          'Campañas on premise, off premise y digitales, con creadores, prensa y promociones.',
-          'Lanzamientos de cerveza, activaciones y ferias: Hipódromo, Oktoberfest, San Patricio y rugby.',
-          'Adaptación de campañas globales de Guinness bajo lineamientos de Diageo.',
-          'Coordinación con diseño y ecommerce, comunicación de los bares de Palermo y Pilar, y gestión de equipo.',
+          'Lanzamientos y colaboraciones: DISOLUTA y Rabieta × Kakawa.',
+          'Activaciones en Oktoberfest, San Patricio, rugby y ferias del Hipódromo.',
         ],
       },
       {
@@ -173,10 +147,9 @@ export const perfil = {
         empresa: 'Grupo Sancor Seguros',
         rol: 'De pasante a Analista de Relaciones Institucionales',
         puntos: [
-          'Presupuestos anuales del área.',
-          'Relación con periodistas, análisis de notas en medios y clipping.',
-          'Eventos corporativos, sponsoreo y evaluación de propuestas.',
-          'Experiencias en suites de Movistar Arena y Teatro El Nacional.',
+          'Relación con prensa, análisis de medios y clipping.',
+          'Eventos corporativos y sponsoreo.',
+          'Experiencias en Movistar Arena y Teatro El Nacional.',
         ],
       },
     ],
